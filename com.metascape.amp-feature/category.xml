@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description>
+      Tools for Agent Modeling, Execution and Graphics.
+   </description>
+   <feature url="features/org.eclipse.amp.agf.chart_${org.eclipse.amp.agf.chart.version}.jar" id="org.eclipse.amp.agf.chart" version="${org.eclipse.amp.agf.chart.version}">
+      <category name="Agent Modeling"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.agf.zest_${org.eclipse.amp.agf.zest.version}.jar" id="org.eclipse.amp.agf.zest" version="${org.eclipse.amp.agf.zest.version}">
+      <category name="Agent Modeling"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.agf_${org.eclipse.amp.agf.version}.jar" id="org.eclipse.amp.agf" version="${org.eclipse.amp.agf.version}">
+      <category name="Agent Modeling"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.amf.core_${org.eclipse.amp.amf.core.version}.jar" id="org.eclipse.amp.amf.core" version="${org.eclipse.amp.amf.core.version}">
+      <category name="Agent Modeling"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.amf.target.escape_${org.eclipse.amp.amf.target.escape.version}.jar" id="org.eclipse.amp.amf.target.escape" version="${org.eclipse.amp.amf.target.escape.version}">
+      <category name="Agent Modeling"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.amf_${org.eclipse.amp.amf.version}.jar" id="org.eclipse.amp.amf" version="${org.eclipse.amp.amf.version}">
+      <category name="Agent Modeling"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.amfx_${org.eclipse.amp.amfx.version}.jar" id="org.eclipse.amp.amfx" version="${org.eclipse.amp.amfx.version}">
+      <category name="Agent Modeling"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.axf_${org.eclipse.amp.axf.version}.jar" id="org.eclipse.amp.axf" version="${org.eclipse.amp.axf.version}">
+      <category name="Agent Modeling"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.escape_${org.eclipse.amp.escape.version}.jar" id="org.eclipse.amp.escape" version="${org.eclipse.amp.escape.version}">
+      <category name="Agent Modeling"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.amf.target.ascape_${org.eclipse.amp.amf.target.ascape.version}.jar" id="org.eclipse.amp.amf.target.ascape" version="${org.eclipse.amp.amf.target.ascape.version}">
+      <category name="Agent Modeling Extensions"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.amf.target.repast_${org.eclipse.amp.amf.target.repast.version}.jar" id="org.eclipse.amp.amf.target.repast" version="${org.eclipse.amp.amf.target.repast.version}">
+      <category name="Agent Modeling Extensions"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.agf3d_${org.eclipse.amp.agf3d.version}.jar" id="org.eclipse.amp.agf3d" version="${org.eclipse.amp.agf3d.version}">
+      <category name="Agent Modeling Extensions"/>
+   </feature>
+   <feature url="features/org.eclipse.amp.doc.all_${org.eclipse.amp.all.version}.jar" id="org.eclipse.amp.doc.all" version="${org.eclipse.amp.doc.all.version}">
+      <category name="Agent Modeling"/>
+   </feature>
+   <category-def name="Agent Modeling" label="Agent Modeling">
+      <description>
+         Eclipse Agent Modeling Project tools, including Agent Modeling Framework, Agent eXectution Framework, Agent Graphics Framework, and Escape.
+      </description>
+   </category-def>
+   <category-def name="Agent Modeling Extensions" label="Agent Modeling Extensions">
+      <description>
+         Optional features for the Eclipse Agent Modeling Project, including support for 3D graphics, and Ascape and Repast targets. All of these targets require additional non-Eclipse hosted plugins. Please see individual features for details.
+      </description>
+   </category-def>
+</site>

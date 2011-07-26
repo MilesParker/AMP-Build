@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0"
+	xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+	<rm:locator searchPathRef="indigo" pattern="^org\.junit" />
+	<rm:locator searchPathRef="indigo" pattern="^org\.junit4" />
+	<rm:locator searchPathRef="releng" pattern="^com\.metascape\.amp\.ide\.site$" />
+	<rm:locator searchPathRef="features" pattern="^com\.metascape(\..+)?$"
+		failOnError="false" />
+	<rm:locator searchPathRef="plugins" pattern="^com\.metascape(\..+)?$" />
+	<rm:locator searchPathRef="dependencies" pattern="^org\.eclipse\.zest2(\..+)?$" />
+	<rm:locator searchPathRef="amp" pattern="org\.eclipse(\..+)*3d(\..+)*$" />
+	<rm:locator searchPathRef="lwjgl" pattern="^org\.lwjgl(\..+)*$" />
+	<rm:locator searchPathRef="amp.examples"
+		pattern="^org\.eclipse\.amp(\..+)?\.examples(\..+)?$" />
+	<rm:locator searchPathRef="amp" pattern="^org\.eclipse\.emf\.java(\..+)*$" />
+	<rm:locator searchPathRef="amp"
+		pattern="^org\.eclipse(\..+)?\.amp(\..+)?$" />
+	<rm:locator searchPathRef="amp" pattern="^org\.ascape\.ui\.amp$" />
+	<rm:locator searchPathRef="ascape" pattern="^org\.ascape(\..+)?$"
+		failOnError="false" />
+	<rm:locator searchPathRef="amp" pattern="^org\.ascape(\..+)?$" />
+	<rm:locator pattern=".*" searchPathRef="indigo" failOnError="false" />
+	<rm:locator pattern=".*" searchPathRef="platform"
+		failOnError="false" />
+	<rm:locator pattern=".*" searchPathRef="orbit" />
+	<rm:searchPath name="releng">
+		<rm:provider componentTypes="buckminster,eclipse.feature"
+			readerType="git">
+			<rm:property key="git.remote.uri"
+				value="ssh://git@metascape.forge.cloudbees.com/metascape/metascape.git" />
+			<rm:property key="git.remote.name" value="metascape" />
+			<rm:uri format="{0},investigator/releng/{1}">
+				<bc:propertyRef key="workspace.root" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+		</rm:provider>
+	</rm:searchPath>
+	<rm:searchPath name="features">
+		<rm:provider componentTypes="eclipse.feature" readerType="git">
+			<rm:property key="git.remote.uri"
+				value="ssh://git@metascape.forge.cloudbees.com/metascape/metascape.git" />
+			<rm:property key="git.remote.name" value="metascape" />
+			<rm:uri format="{0},investigator/features/{1}-feature">
+				<bc:propertyRef key="workspace.root" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+		</rm:provider>
+	</rm:searchPath>
+	<rm:searchPath name="plugins">
+		<rm:provider componentTypes="osgi.bundle" readerType="git">
+			<rm:property key="git.remote.uri"
+				value="ssh://git@metascape.forge.cloudbees.com/metascape/metascape.git" />
+			<rm:property key="git.remote.name" value="metascape" />
+			<rm:uri format="{0},investigator/plugins/{1}">
+				<bc:propertyRef key="workspace.root" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+		</rm:provider>
+	</rm:searchPath>
+	<rm:searchPath name="dependencies">
+		<rm:provider componentTypes="osgi.bundle" readerType="git">
+			<rm:property key="git.remote.uri"
+				value="ssh://git@metascape.forge.cloudbees.com/metascape/metascape.git" />
+			<rm:property key="git.remote.name" value="metascape" />
+			<rm:uri format="{0},investigator/dependencies/{1}">
+				<bc:propertyRef key="workspace.root" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+		</rm:provider>
+	</rm:searchPath>
+	<rm:searchPath name="ascape">
+		<rm:provider readerType="p2" componentTypes="osgi.bundle,eclipse.feature"
+			mutable="false" source="true">
+			<rm:uri
+				format="http://localhost:10010/job/ascape/lastSuccessfulBuild/artifact/ascape/">
+				<bc:propertyRef key="workspace.root" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+		</rm:provider>
+	</rm:searchPath>
+
+	<rm:searchPath name="amp">
+		<rm:provider readerType="p2" componentTypes="osgi.bundle,eclipse.feature"
+			mutable="false" source="true">
+			<rm:uri
+				format="http://download.eclipse.org/amp/updates/nightly">
+				<bc:propertyRef key="workspace.root" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+		</rm:provider>
+	</rm:searchPath>
+
+	<rm:searchPath name="lwjgl">
+		<rm:provider readerType="p2" componentTypes="osgi.bundle,eclipse.feature"
+			mutable="false" source="true">
+			<rm:uri format="http://lwjgl.org/update">
+				<bc:propertyRef key="workspace.root" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+		</rm:provider>
+	</rm:searchPath>
+
+	<rm:searchPath name="amp.examples">
+		<rm:provider componentTypes="osgi.bundle" readerType="git"
+			resolutionFilter="">
+			<rm:uri format="{0},org.eclipse.amp.amf/examples/{1}">
+				<bc:propertyRef key="checkout.location" />
+				<bc:propertyRef key="buckminster.component" />
+			</rm:uri>
+			<rm:property key="git.remote.uri"
+				value="git://git.eclipse.org/gitroot/amp/org.eclipse.amp.git" />
+			<rm:property key="git.remote.name" value="origin" />
+			<rm:property key="git.auto.fetch" value="true" />
+		</rm:provider>
+	</rm:searchPath>
+	<rm:searchPath name="indigo">
+		<rm:provider componentTypes="osgi.bundle,eclipse.feature"
+			readerType="p2" source="false" mutable="false">
+			<rm:property key="buckminster.source" value="false" />
+			<rm:property key="buckminster.mutable" value="false" />
+			<rm:uri format="http://download.eclipse.org/releases/indigo" />
+		</rm:provider>
+	</rm:searchPath>
+	<rm:searchPath name="platform">
+		<rm:provider componentTypes="osgi.bundle,eclipse.feature"
+			readerType="p2" source="false" mutable="false">
+			<rm:property key="buckminster.source" value="false" />
+			<rm:property key="buckminster.mutable" value="false" />
+			<rm:uri
+				format="http://download.eclipse.org/eclipse/updates/3.7?importType=binary" />
+		</rm:provider>
+	</rm:searchPath>
+	<rm:searchPath name="orbit">
+		<rm:provider componentTypes="eclipse.feature,osgi.bundle"
+			readerType="p2" source="false" mutable="false">
+			<rm:uri format="{0}/tools/orbit/downloads/drops/R20110523182458/repository">
+				<bc:propertyRef key="eclipse.download" />
+			</rm:uri>
+		</rm:provider>
+	</rm:searchPath>
+</rm:rmap>
