@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="ampide.rmap">
+    <cq:rootRequest name="com.metascape.amp.ide.site" componentType="eclipse.feature"/>
+    <cq:property key="buckminster.download.source" value="true"/>
+    <cq:property key="eclipse.download" value="http://download.eclipse.org"/>
+    <cq:property key="target.arch" value="*"/>
+    <cq:property key="target.os" value="*"/>
+    <cq:property key="target.ws" value="*"/>
+    <cq:advisorNode namePattern="^com\.metascape([\.].+)+\.source" componentType="eclipse.feature" skipComponent="true"/>
+    <cq:advisorNode namePattern="^com\.metascape([\.].+)+\.source" componentType="osgi.bundle" skipComponent="true"/>
+</cq:componentQuery>

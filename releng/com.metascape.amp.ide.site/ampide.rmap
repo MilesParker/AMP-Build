@@ -28,7 +28,7 @@
 			readerType="git">
 			<rm:property key="git.remote.uri"
 				value="git://github.com/MilesParker/AMP-Build.git" />
-			<rm:uri format="{0},investigator/releng/{1}">
+			<rm:uri format="{0},releng/{1}">
 				<bc:propertyRef key="workspace.root" />
 				<bc:propertyRef key="buckminster.component" />
 			</rm:uri>
@@ -38,7 +38,7 @@
 		<rm:provider componentTypes="eclipse.feature" readerType="git">
 			<rm:property key="git.remote.uri"
 				value="git://github.com/MilesParker/AMP-Build.git" />
-			<rm:uri format="{0},investigator/features/{1}-feature">
+			<rm:uri format="{0},features/{1}-feature">
 				<bc:propertyRef key="workspace.root" />
 				<bc:propertyRef key="buckminster.component" />
 			</rm:uri>
@@ -48,7 +48,7 @@
 		<rm:provider componentTypes="osgi.bundle" readerType="git">
 			<rm:property key="git.remote.uri"
 				value="git://github.com/MilesParker/AMP-Build.git" />
-			<rm:uri format="{0},investigator/plugins/{1}">
+			<rm:uri format="{0},plugins/{1}">
 				<bc:propertyRef key="workspace.root" />
 				<bc:propertyRef key="buckminster.component" />
 			</rm:uri>
@@ -59,7 +59,7 @@
 			<rm:property key="git.remote.uri"
 				value="git://github.com/MilesParker/AMP-Build.git" />
 			<rm:property key="git.remote.name" value="metascape" />
-			<rm:uri format="{0},investigator/dependencies/{1}">
+			<rm:uri format="{0},dependencies/{1}">
 				<bc:propertyRef key="workspace.root" />
 				<bc:propertyRef key="buckminster.component" />
 			</rm:uri>

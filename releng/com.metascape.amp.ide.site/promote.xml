@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="deploy" name="Create Runnable Jar for Project org.ascape.all">
+	<!--this file was created by Eclipse Runnable JAR Export Wizard-->
+	<!--ANT 1.7 is required                                        -->
+	<property name="amp.version" value="1.0.0" />
+	<property name="build.qualifier" value="I" />
+	<property name="dir.build.last" value="../../../amp/" />
+	<property name="dir.build.last" value="../../../amp/" />
+
+	<target name="prep">
+		<delete dir="${dir.workspace}/ul" />
+		<copy file="${dir.workspace}/amp/amp.cocoa.macosx.x86_64.zip" tofile="${dir.workspace}/ul/amp/${amp.version}${build.qualifier}/Mac/AMPMac64.zip" failonerror="false" />
+		<copy file="${dir.workspace}/amp/amp.cocoa.macosx.x86.zip" tofile="${dir.workspace}/ul/amp/${amp.version}${build.qualifier}/Mac/AMPMac.zip" failonerror="false" />
+		<copy file="${dir.workspace}/amp/amp.win32.win32.x86.zip" tofile="${dir.workspace}/ul/amp/${amp.version}${build.qualifier}/Windows/AMPWin64.zip" failonerror="false" />
+		<copy file="${dir.workspace}/amp/amp.win32.win32.x86_64.zip" tofile="${dir.workspace}/ul/amp/${amp.version}${build.qualifier}/Windows/Mac/AMPWin64.zip" failonerror="false" />
+		<copy file="${dir.workspace}/amp/amp.linux.gtk.x86.zip" tofile="${dir.workspace}/ul/amp/${amp.version}${build.qualifier}/Linux/AMPLinux64.zip" failonerror="false" />
+		<copy file="${dir.workspace}/amp/amp.linux.gtk.x86_64.zip" tofile="${dir.workspace}/ul/amp/${amp.version}${build.qualifier}/Linux/Mac/AMPLinux64.zip" failonerror="false" />
+	</target>
+
+	<target name="upload" depends="prep">
+		<scp password="${metascape.pw}" todir="${metascape.user}@metascapeabm.com:metascapeabm.com/downloads/">
+			<fileset file="${dir.workspace}/ul/**" />
+			<!--			<fileset file="${dir.workspace}/amp/Windows/**" />
+			<fileset file="${dir.workspace}/Linux/**" /> -->
+		</scp>
+	</target>
+
+	<target name="deploy" depends="upload" />
+</project>
