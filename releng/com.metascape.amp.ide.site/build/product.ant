@@ -43,9 +43,6 @@
 			<arg value="${target.arch}" />
 			<arg value="-consoleLog"/>
 			<arg value="-debug"/>
-			<jvmarg value="-Declipse.p2.data.area=${destination}/p2"/>
-			<jvmarg value="-Declipse.p2.profile=${profile}"/>
-			<!-- jvmarg value="-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=y"/ -->
 			<arg value="-roaming"/>
 		</java>
 	</target>

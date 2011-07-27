@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="site.rmap">
-    <cq:rootRequest name="com.metascape.amp.ide.site" componentType="eclipse.feature"/>
-    <cq:advisorNode namePattern="^org\.eclipse([\.].+)+\.source" componentType="eclipse.feature" skipComponent="true"/>
-    <cq:advisorNode namePattern="^org\.eclipse([\.].+)+\.source" componentType="osgi.bundle" skipComponent="true"/>
-</cq:componentQuery>
